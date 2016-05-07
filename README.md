@@ -1,7 +1,7 @@
 # Simplesite
 
-Simplesite is a minimal configuration to start building a static site. Since it uses a custom docker image to compile
-and bundle the assets you won't need node, sass or other tools installed.
+Simplesite is a minimal configuration to start building a static site. It uses a custom docker image to compile
+and bundle the assets, so you won't need node, sass or other tools installed.
 
 ## Work in progress
 
@@ -27,7 +27,7 @@ This is a work in progress.
 
 * *make dev* compiles for development. Includes source maps and does not minify/uglify.
 * *make prod* compiles for production. Does NOT include source maps and do minify and uglify your javascript files.
-* *make watch* runs *make dev* when something changes under `src/`
+* *make watch* runs *make dev* when something changes under `src/`. Supports livereload.
 * *make clean* deletes your `dist/` dir.
 
 ## Under the hood

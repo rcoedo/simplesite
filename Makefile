@@ -1,14 +1,14 @@
-IMAGE=rcoedo/static-site-compiler:0.0.1
-RUN=docker run -t --rm -v $(shell pwd):/app $(IMAGE) gulp
+IMAGE=rcoedo/simplesite-compiler:0.0.2
+RUN=docker run -it --rm -v $(shell pwd):/app
 
 dev:
-	$(RUN) dev
+	$(RUN) $(IMAGE) "echo pid1 > /dev/null && gulp dev"
 
 prod:
-	$(RUN) prod
+	$(RUN) $(IMAGE) "echo pid1 > /dev/null && gulp prod"
 
 clean:
-	$(RUN) clean
+	$(RUN) $(IMAGE) "echo pid1 > /dev/null && gulp clean"
 
 watch:
-	$(RUN) watch
+	$(RUN) -p 35729:35729 $(IMAGE)  "echo pid1 > /dev/null && gulp watch"
