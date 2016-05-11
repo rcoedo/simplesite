@@ -3,10 +3,6 @@
 Simplesite is a minimal configuration to start building a static site. It uses a custom docker image to compile
 and bundle the assets, so you won't need node, sass or other tools installed.
 
-## Work in progress
-
-This is a work in progress.
-
 ## Requisites
 
 * Docker
@@ -18,6 +14,11 @@ This is a work in progress.
 3. `$ make prod`
 4. Your output will be in `dist/`
 
+## Javascript
+
+If you rely heavily on javascript I recommend to keep your js as a separate submodule. You can bundle it yourself
+with your favourite tool and throw the bundle in src/static.
+
 ## Things you should know
 
 * `src/html` is copied to `dist/`
@@ -25,8 +26,8 @@ This is a work in progress.
 
 ## Tasks
 
-* *make dev* compiles for development. Includes source maps and does not minify/uglify.
-* *make prod* compiles for production. Does NOT include source maps and do minify and uglify your javascript files.
+* *make dev* compiles for development. Includes source maps.
+* *make prod* compiles for production. Does not include source maps.
 * *make watch* runs *make dev* when something changes under `src/`. Supports livereload.
 * *make clean* deletes your `dist/` dir.
 
